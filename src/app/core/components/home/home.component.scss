@@ -1,0 +1,69 @@
+@import './src/style_variables';
+
+.content {
+  padding: 40px 40px 40px 40px;
+  background-image: url("~src/assets/home_background.png");
+  width: auto;
+  height: auto;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.welcome-msg {
+  font-size: 70px;
+  color: $primary-color-light;
+  opacity: 0.9;
+}
+
+.welcome-alt-msg {
+  font-size: 30px;
+  color: $primary-text-color;
+  opacity: 0.9;
+}
+
+.my-primary-button {
+  box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, .2);
+  color: $primary-color-light;
+  border-color: $primary-color-light;
+
+  &:hover {
+    background-color: $primary-color-light;
+    color: white;
+  }
+}
+
+.arrow-left-img {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.arrow-right-img {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.content-text {
+  color: $primary-text-color;
+  opacity: 0.9;
+}
+
+.content-text-1 {
+  font-size: 40px;
+}
+
+.content-text-2 {
+  font-size: 20px;
+}
+
+.content-row {
+  padding: 100px;
+}
+
+.home-img {
+  height: auto;
+  width: auto;
+  max-width: 500px;
+  max-height: 500px;
+}
