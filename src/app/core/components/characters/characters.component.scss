@@ -1,0 +1,12 @@
+@import "src/style_variables";
+
+.page-content {
+  width: auto;
+  height: auto;
+}
+
+.welcome-msg {
+  font-size: 40px;
+  color: $primary-color-light;
+  opacity: 0.9;
+}

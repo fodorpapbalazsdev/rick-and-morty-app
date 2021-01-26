@@ -1,1 +1,20 @@
-<p>characters works!</p>
+<div class="row content d-flex justify-content-center">
+  <div class="col-md-12 header-row p-4">
+    <b class="welcome-msg d-flex justify-content-center">Here are some Rick&Morty characters!</b>
+  </div>
+  <div class="col-md-12 d-flex justify-content-center custom-control custom-switch mb-3">
+    <input type="checkbox" class="custom-control-input" id="customSwitch1"
+           [checked]="infiniteLoop"
+           (change)="infiniteLoop = !infiniteLoop">
+    <label *ngIf="!infiniteLoop" class="custom-control-label" for="customSwitch1">Switch to <b>infinite</b> list</label>
+    <label *ngIf="infiniteLoop" class="custom-control-label" for="customSwitch1">Switch to <b>simple</b> list</label>
+  </div>
+  <div class="col-md-12 d-flex justify-content-center">
+    <div *ngIf="!infiniteLoop; else infiniteLoopView">
+      <app-character-simple-list></app-character-simple-list>
+    </div>
+    <ng-template #infiniteLoopView>
+      <app-character-infinite-list></app-character-infinite-list>
+    </ng-template>
+  </div>
+</div>
