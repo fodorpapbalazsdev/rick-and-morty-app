@@ -82,3 +82,17 @@
   margin-top: 30px;
   padding: 40px;
 }
+
+.back-button {
+  margin-top: 20px;
+  width: 50px;
+  height: 150px;
+  background-image: url("~src/assets/back-button-img-1.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:hover {
+    background-image: url("~src/assets/back-button-img-2.png");
+  }
+}

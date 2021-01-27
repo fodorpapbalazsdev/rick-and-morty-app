@@ -1,4 +1,7 @@
 <div class="background d-flex justify-content-center">
+  <div class="back-button" (click)="backButtonClicked()"
+       matTooltip="Go back to characters page" matTooltipPosition="left" >
+  </div>
   <div *ngIf="character; else waitingForCharacter" class="background-2 row">
     <div class="col-md-6 character-card-left-side">
       <div class="col-md-12 d-flex justify-content-center">
@@ -16,7 +19,8 @@
                          'unknown-status': character.status.toLowerCase() != 'alive' && character.status.toLowerCase() != 'dead'}"
       ></div>
       <p class="content-text-1 mt-4 d-flex justify-content-center">Last location: {{character.location.name }}</p>
-      <p class="content-text-1 mt-4 d-flex justify-content-center">Created at: {{character.created | date:'YYYY-MM-dd'}}</p>
+      <p class="content-text-1 mt-4 d-flex justify-content-center">Created
+        at: {{character.created | date:'YYYY-MM-dd'}}</p>
     </div>
   </div>
   <ng-template #waitingForCharacter>
