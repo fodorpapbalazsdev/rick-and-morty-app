@@ -1,0 +1,46 @@
+@import "src/style_variables";
+
+.content {
+  margin: 10px 10px 20px 10px;
+  border-style: solid;
+  border-color: rgb(127, 177, 214, .4);
+  border-radius: 20px;
+  padding: 20px 10px 20px 10px;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, .2);
+}
+
+.content-text-1 {
+  color: $primary-text-color;
+}
+
+.content-text-2 {
+  size: 30px;
+  color: #373636;
+}
+
+.form-group-div {
+  width: 60px;
+}
+
+.my-primary-button {
+  color: $primary-color-light;
+  border-color: $primary-color-light;
+
+  &:hover {
+    background-color: $primary-color-light;
+    color: white;
+  }
+
+  &:hover:disabled {
+    color: $primary-color-light;
+    background-color: white;
+  }
+}
+
+.page-index-button {
+  height: 40px;
+}
+
+.page-index-selector {
+  height: 40px;
+}
