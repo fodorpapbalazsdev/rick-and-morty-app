@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Character} from '../../../models/character.model';
+import {Character} from '../../../../models/character.model';
 
 @Component({
   selector: 'app-character-infinite-list',
