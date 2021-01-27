@@ -1,1 +1,19 @@
-<p>character-infinite-list works!</p>
+<div class="row content">
+  <div class="col-md-12">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-4 d-flex justify-content-start">
+        <b class="content-text-1">NAME</b>
+      </div>
+      <div class="col-md-4 d-flex justify-content-center">
+        <b class="content-text-1">STATUS</b>
+      </div>
+      <div class="col-md-4 d-flex justify-content-end">
+        <b class="content-text-1">DATE OF CREATION</b>
+      </div>
+    </div>
+    <div *ngFor="let character of characters; let character_index = index">
+      <app-character-list-item [character]="character"></app-character-list-item>
+    </div>
+  </div>
+</div>
+

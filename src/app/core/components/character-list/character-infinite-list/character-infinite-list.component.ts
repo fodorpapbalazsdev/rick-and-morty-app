@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Character} from '../../../models/character.model';
 
 @Component({
   selector: 'app-character-infinite-list',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterInfiniteListComponent implements OnInit {
 
-  constructor() { }
+  @Input() characters: Character[];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
-
 }

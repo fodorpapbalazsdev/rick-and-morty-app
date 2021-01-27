@@ -11,6 +11,7 @@ import {AboutComponent} from './core/components/about/about.component';
 import {CharacterSimpleListComponent} from './core/components/character-list/character-simple-list/character-simple-list.component';
 import {CharacterInfiniteListComponent} from './core/components/character-list/character-infinite-list/character-infinite-list.component';
 import {HttpClientModule} from '@angular/common/http';
+import { CharacterListItemComponent } from './core/components/characters/character-list-item/character-list-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
     CharactersComponent,
     AboutComponent,
     CharacterSimpleListComponent,
-    CharacterInfiniteListComponent
+    CharacterInfiniteListComponent,
+    CharacterListItemComponent
   ],
   imports: [
     BrowserModule,
