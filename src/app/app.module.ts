@@ -12,6 +12,8 @@ import {CharacterSimpleListComponent} from './core/components/character-list/cha
 import {CharacterInfiniteListComponent} from './core/components/character-list/character-infinite-list/character-infinite-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CharacterListItemComponent } from './core/components/characters/character-list-item/character-list-item.component';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -27,8 +29,11 @@ import { CharacterListItemComponent } from './core/components/characters/charact
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    NoopAnimationsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,46 @@
+.character-row {
+  margin: 5px 0px 5px 0px;
+  padding: 10px 20px 10px 20px;
+  min-width: 750px;
+  border-radius: 5px;
+
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,.2);
+  &:hover {
+    color: white;
+    background-color: rgb(127, 177, 214, .4);
+  }
+}
+
+.content-text-1 {
+  color: #373636;
+}
+
+.alive-status {
+  background-image: url("~src/assets/character-status-icons/alive-status-icon.png");
+  width: 50px;
+  height: 50px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dead-status {
+  background-image: url("~src/assets/character-status-icons/dead-status-icon.png");
+  width: 50px;
+  height: 50px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.unknown-status {
+  background-image: url("~src/assets/character-status-icons/unknown-status-icon.png");
+  width: 50px;
+  height: 50px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

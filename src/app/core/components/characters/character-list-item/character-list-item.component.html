@@ -1,1 +1,15 @@
-<p>character-list-item works!</p>
+<div *ngIf="character" class="row d-flex justify-content-center character-row">
+  <div class="col-md-4 d-flex justify-content-start">
+    <p class="content-text-1">{{character.name}}</p>
+  </div>
+  <div class="col-md-4 d-flex justify-content-center">
+    <div class="content-text-1" matTooltip="{{character.status}}" matTooltipPosition="after"
+         [ngClass]="{'alive-status': character.status.toLowerCase() === 'alive',
+                         'dead-status': character.status.toLowerCase() === 'dead',
+                         'unknown-status': character.status.toLowerCase() != 'alive' && character.status.toLowerCase() != 'dead'}"
+    ></div>
+  </div>
+  <div class="col-md-4 d-flex justify-content-end">
+    <p class="content-text-1">{{character.created | date:'YYYY-MM-dd'}}</p>
+  </div>
+</div>
