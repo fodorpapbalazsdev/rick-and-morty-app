@@ -1,4 +1,6 @@
-<div *ngIf="character" class="row d-flex justify-content-center character-row">
+<div class="row d-flex justify-content-center character-row"
+     *ngIf="character"
+     (click)="characterClicked(character.id)">
   <div class="col-md-4 d-flex justify-content-start">
     <p class="content-text-1">{{character.name}}</p>
   </div>

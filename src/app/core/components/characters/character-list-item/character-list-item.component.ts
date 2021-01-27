@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Character} from '../../../models/character.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-character-list-item',
@@ -10,9 +11,13 @@ export class CharacterListItemComponent implements OnInit {
 
   @Input() character: Character;
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  characterClicked(characterId: number): void {
+    this.router.navigate([characterId],  { relativeTo: this.route });
   }
 
 }
