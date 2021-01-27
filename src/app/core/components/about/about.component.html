@@ -1,1 +1,83 @@
-<p>about works!</p>
+<div class="row content">
+  <div class="col-sm-12 d-flex justify-content-center"
+       [@translateYNegativeAnimation]="this.pageLoaded ? 'notTranslated' : 'translated'"
+       [@elementAppearAnimation]="this.pageLoaded ? 'pageAppear' : 'disappear'">
+    <h1 class="welcome-msg"><b></b>About</h1>
+  </div>
+  <div class="col-sm-12 content-row">
+    <div class="row">
+      <div class="col-sm-3"
+           [@elementAppearAnimation]="this.getAppearAnimation(0)">
+        <h2 class="text-2">Used Languages <br> and Frameworks</h2>
+      </div>
+      <div class="col-sm-9 d-flex justify-content-between"
+           [@elementAppearAnimation]="this.getAppearAnimation(1)">
+        <img id="img1" src="../../assets/logos/angularlogo.png" class="img-fluid logo"
+             (mouseover)="this.mouseOver($event)"
+             (mouseleave)="this.mouseLeave()"
+             [@mouseOverAnimation]="this.mouseOverAnimation === 'img1' ? 'mouseOver' : 'mouseLeave' "
+             [@elementAppearAnimation]="this.getAppearAnimation(2)">
+        <img id="img2" src="../../assets/logos/bootstrap.png" class="img-fluid logo"
+             (mouseover)="this.mouseOver($event)"
+             (mouseleave)="this.mouseLeave()"
+             [@mouseOverAnimation]="this.mouseOverAnimation === 'img2' ? 'mouseOver' : 'mouseLeave' "
+             [@elementAppearAnimation]="this.getAppearAnimation(3)">
+        <img id="img3" src="../../assets/logos/more-01.png" class="img-fluid logo"
+             (mouseover)="this.mouseOver($event)"
+             (mouseleave)="this.mouseLeave()"
+             [@mouseOverAnimation]="this.mouseOverAnimation === 'img3' ? 'mouseOver' : 'mouseLeave' "
+             [@elementAppearAnimation]="this.getAppearAnimation(4)">
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 content-row"
+       [@elementAppearAnimation]="this.getAppearAnimation(5)">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto consequatur delectus doloremque ipsa
+      iste molestias natus, optio pariatur quibusdam rerum sequi tempore voluptates. Consectetur illum inventore nemo
+      neque pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum fugit ipsum libero
+      necessitatibus sunt, velit! Accusamus animi, at blanditiis cum delectus fugit maxime minus sapiente, sunt velit
+      vero voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut culpa, distinctio
+      dolorem doloremque ea eius exercitationem impedit incidunt molestias nobis omnis quam quisquam quo reprehenderit
+      sapiente soluta, tenetur!</p>
+  </div>
+  <div class="col-sm-12 content-row"
+       [@elementAppearAnimation]="this.getAppearAnimation(6)">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto consequatur delectus doloremque ipsa
+      iste molestias natus, optio pariatur quibusdam rerum sequi tempore voluptates. Consectetur illum inventore nemo
+      neque pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum fugit ipsum libero
+      necessitatibus sunt, velit! Accusamus animi, at blanditiis cum delectus fugit maxime minus sapiente, sunt velit
+      vero voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut culpa, distinctio
+      dolorem doloremque ea eius exercitationem impedit incidunt molestias nobis omnis quam quisquam quo reprehenderit
+      sapiente soluta, tenetur!</p>
+  </div>
+  <div class="col-sm-12 content-row"
+       [@elementAppearAnimation]="this.getAppearAnimation(7)">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto consequatur delectus doloremque ipsa
+      iste molestias natus, optio pariatur quibusdam rerum sequi tempore voluptates. Consectetur illum inventore nemo
+      neque pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum fugit ipsum libero
+      necessitatibus sunt, velit! Accusamus animi, at blanditiis cum delectus fugit maxime minus sapiente, sunt velit
+      vero voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut culpa, distinctio
+      dolorem doloremque ea eius exercitationem impedit incidunt molestias nobis omnis quam quisquam quo reprehenderit
+      sapiente soluta, tenetur!</p>
+  </div>
+  <div class="col-sm-12 content-row"
+       [@elementAppearAnimation]="this.getAppearAnimation(8)">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto consequatur delectus doloremque ipsa
+      iste molestias natus, optio pariatur quibusdam rerum sequi tempore voluptates. Consectetur illum inventore nemo
+      neque pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum fugit ipsum libero
+      necessitatibus sunt, velit! Accusamus animi, at blanditiis cum delectus fugit maxime minus sapiente, sunt velit
+      vero voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut culpa, distinctio
+      dolorem doloremque ea eius exercitationem impedit incidunt molestias nobis omnis quam quisquam quo reprehenderit
+      sapiente soluta, tenetur!</p>
+  </div>
+  <div class="col-sm-12 content-row"
+       [@elementAppearAnimation]="this.getAppearAnimation(9)">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto consequatur delectus doloremque ipsa
+      iste molestias natus, optio pariatur quibusdam rerum sequi tempore voluptates. Consectetur illum inventore nemo
+      neque pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi earum fugit ipsum libero
+      necessitatibus sunt, velit! Accusamus animi, at blanditiis cum delectus fugit maxime minus sapiente, sunt velit
+      vero voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut culpa, distinctio
+      dolorem doloremque ea eius exercitationem impedit incidunt molestias nobis omnis quam quisquam quo reprehenderit
+      sapiente soluta, tenetur!</p>
+  </div>
+</div>

@@ -11,10 +11,10 @@ import {AboutComponent} from './core/components/about/about.component';
 import {CharacterSimpleListComponent} from './core/components/characters/character-list/character-simple-list/character-simple-list.component';
 import {CharacterInfiniteListComponent} from './core/components/characters/character-list/character-infinite-list/character-infinite-list.component';
 import {HttpClientModule} from '@angular/common/http';
-import { CharacterListItemComponent } from './core/components/characters/character-list-item/character-list-item.component';
-import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {CharacterListItemComponent} from './core/components/characters/character-list-item/character-list-item.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { CharacterDetailComponent } from './core/components/character-detail/character-detail.component';
+import {CharacterDetailComponent} from './core/components/character-detail/character-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { CharacterDetailComponent } from './core/components/character-detail/cha
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    NoopAnimationsModule,
     MatTooltipModule
   ],
   providers: [],

@@ -1,0 +1,39 @@
+@import "src/style_variables";
+
+.content {
+  padding: 50px 100px 0 100px;
+  background-image: url("~src/assets/about_bckgrnd.png");
+  height: 100%;
+  width: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.welcome-msg {
+  font-size: 50px;
+  color: $primary-text-color;
+  opacity: 0.8;
+}
+
+.text-2 {
+  font-size: 30px;
+  color: $primary-text-color;
+  opacity: 0.8;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.content-row {
+  margin: 20px;
+}
+
+p {
+  color: $primary-text-color;
+  opacity: 0.8;
+}
