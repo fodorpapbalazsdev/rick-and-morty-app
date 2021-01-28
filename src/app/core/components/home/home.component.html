@@ -1,8 +1,13 @@
 <div class="row content d-flex justify-content-center">
   <div class="col-sm-12 header-row p-4">
-    <b class="welcome-msg d-flex justify-content-center">Welcome!</b>
-    <b class="welcome-alt-msg d-flex justify-content-center">Awesome page for Rick&Morty Characters</b>
-    <div class="col-sm-12 d-flex justify-content-center p-4">
+    <b class="welcome-msg d-flex justify-content-center"
+       [@elementAppearAnimation]="this.getAppearAnimation(0)"
+    >Welcome!</b>
+    <b class="welcome-alt-msg d-flex justify-content-center"
+       [@elementAppearAnimation]="this.getAppearAnimation(1)"
+    >Awesome page for Rick&Morty Characters</b>
+    <div class="col-sm-12 d-flex justify-content-center p-4"
+         [@elementAppearAnimation]="this.getAppearAnimation(2)">
       <img src="assets/arrow_right.png" class="arrow-right-img" alt="Arrow Right">
       <button (click)="getStartedButtonClicked()" class="btn btn-lg btn-outline-primary my-primary-button"
               type="submit">Get started
@@ -11,7 +16,8 @@
     </div>
   </div>
   <div class="row col-sm-12 p-4">
-    <div class="col-sm-6 justify-content-center content-row">
+    <div class="col-sm-6 justify-content-center content-row"
+         [@elementAppearAnimation]="this.getAppearAnimation(3)">
       <b class="content-text content-text-1">
         Character Quick Infos
       </b>
@@ -20,15 +26,18 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad aperiam, architecto aut cumque id itaque maxime
         minima mollitia odio quas quisquam sit soluta tempora unde vel velit voluptate voluptatibus?</p>
     </div>
-    <div class="col-sm-6 d-flex justify-content-center">
+    <div class="col-sm-6 d-flex justify-content-center"
+         [@elementAppearAnimation]="this.getAppearAnimation(4)">
       <img src="assets/home-img-2.png" class="home-img" alt="Home image about Morty">
     </div>
   </div>
   <div class="row col-sm-12 p-4">
-    <div class="col-sm-6 d-flex justify-content-center">
+    <div class="col-sm-6 d-flex justify-content-center"
+         [@elementAppearAnimation]="this.getAppearAnimation(5)">
       <img src="assets/home-img-1.png" class="home-img" alt="Home image about Rick">
     </div>
-    <div class="col-sm-6 justify-content-center content-row">
+    <div class="col-sm-6 justify-content-center content-row"
+         [@elementAppearAnimation]="this.getAppearAnimation(6)">
       <b class="content-text content-text-1">
         Get Detailed Infos</b>
       <br>
