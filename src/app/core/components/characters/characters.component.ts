@@ -3,6 +3,7 @@ import {Character} from '../../models/character.model';
 import {CharacterService} from '../../services/character.service';
 import {WarningMessageDialogComponent} from '../dialogs/warning-message-dialog/warning-message-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -19,11 +20,11 @@ export class CharactersComponent implements OnInit {
   nameFilterValue = '';
   statusFilterValue = '';
 
-  constructor(private characterService: CharacterService, private dialog: MatDialog) {
+  constructor(private route: ActivatedRoute, private characterService: CharacterService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
-    this.loadCharacters();
+    this.characters = this.route.snapshot.data.characters;
   }
 
   loadCharacters(): void {
