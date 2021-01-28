@@ -18,6 +18,7 @@ import {CharacterDetailComponent} from './core/components/character-detail/chara
 import {CharacterStatusDirectiveDirective} from './core/components/directives/character-status-directive.directive';
 import {NotAliveCharacterDialogComponent} from './core/components/dialogs/not-alive-character-dialog/not-alive-character-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { WarningMessageDialogComponent } from './core/components/dialogs/warning-message-dialog/warning-message-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     CharacterListItemComponent,
     CharacterDetailComponent,
     CharacterStatusDirectiveDirective,
-    NotAliveCharacterDialogComponent
+    NotAliveCharacterDialogComponent,
+    WarningMessageDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Character} from '../../models/character.model';
 import {CharacterService} from '../../services/character.service';
+import {WarningMessageDialogComponent} from '../dialogs/warning-message-dialog/warning-message-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-characters',
@@ -14,27 +16,16 @@ export class CharactersComponent implements OnInit {
   infiniteLoop = true;
   filterPatternChangedFlag = false;
   hasNoCharacterMatch = false;
-  errorMessage: string;
 
-  constructor(private characterService: CharacterService) {
+  constructor(private characterService: CharacterService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
-    this.characterService.getAllCharacters().then(res => {
-      this.characters = res;
-    }).catch(err => {
-        alert('Error during loading data: ' + err.error.error);
-      }
-    );;
+    this.loadAllCharacters();
   }
 
   unfilterButtonClicked(): void {
-    this.characterService.getAllCharacters().then(res => {
-      this.characters = res;
-    }).catch(err => {
-        alert('Error during loading data: ' + err.error.error);
-      }
-    );;
+    this.loadAllCharacters();
   }
 
   filterPatternChanged(target: any): void {
@@ -44,7 +35,24 @@ export class CharactersComponent implements OnInit {
       this.hasNoCharacterMatch = this.characters.length === 0;
       this.filterPatternChangedFlag = false;
     }).catch(err => {
-        alert('Error during filter: ' + err.error.error);
+        this.dialog.open(WarningMessageDialogComponent, {
+          data: {
+            why: 'character-filter-by-name-not-found'
+          }
+        });
+      }
+    );
+  }
+
+  private loadAllCharacters() {
+    this.characterService.getAllCharacters().then(res => {
+      this.characters = res;
+    }).catch(err => {
+        this.dialog.open(WarningMessageDialogComponent, {
+          data: {
+            why: 'character-loading'
+          }
+        });
       }
     );
   }
