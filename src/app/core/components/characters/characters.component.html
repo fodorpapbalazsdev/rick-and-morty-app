@@ -3,18 +3,45 @@
     <b class="welcome-msg d-flex justify-content-center">Here are some Rick&Morty characters!</b>
   </div>
   <div class="col-md-12 d-flex justify-content-center custom-control custom-switch mb-3">
-    <input type="checkbox" class="custom-control-input" id="customSwitch1"
-           [checked]="infiniteLoop"
-           (change)="infiniteLoop = !infiniteLoop">
-    <label *ngIf="!infiniteLoop" class="custom-control-label" for="customSwitch1">Switch to <b>infinite</b> list</label>
-    <label *ngIf="infiniteLoop" class="custom-control-label" for="customSwitch1">Switch to <b>simple</b> list</label>
+    <button class="btn btn-outline-primary my-primary-button list-select-button" (click)="infiniteLoop = !infiniteLoop"
+            [disabled]="!infiniteLoop"
+            matTooltip="Click to change to Simple List" matTooltipPosition="above"
+            matTooltipShowDelay="1000">
+      Simple List
+    </button>
+    <button class="btn btn-outline-primary my-primary-button list-select-button" (click)="infiniteLoop = !infiniteLoop"
+            [disabled]="infiniteLoop"
+            matTooltip="Click to change to Infinite List" matTooltipPosition="above"
+            matTooltipShowDelay="1000">
+      Infinite List
+    </button>
+
+    <div class="form-group ml-5">
+      <input type="text" class="form-control filter-input" id="exampleFormControlInput1" placeholder="Filter pattern"
+             (change)="filterPatternChanged($event.target)"
+             matTooltip="Press Enter or Leave For Searching" matTooltipPosition="right"
+             matTooltipShowDelay="1000" matTooltipHideDelay="1000"
+             [matTooltipDisabled]="filterPatternChangedFlag">
+    </div>
   </div>
   <div class="col-md-12 d-flex justify-content-center">
-    <div *ngIf="!infiniteLoop; else infiniteLoopView">
-      <app-character-simple-list [characters]="characters"></app-character-simple-list>
+    <div *ngIf="!hasNoCharacterMatch; else hasNoCharacterMatchView">
+      <div *ngIf="!infiniteLoop; else infiniteLoopView">
+        <app-character-simple-list [characters]="characters"></app-character-simple-list>
+      </div>
+      <ng-template #infiniteLoopView>
+        <app-character-infinite-list [characters]="characters"></app-character-infinite-list>
+      </ng-template>
     </div>
-    <ng-template #infiniteLoopView>
-      <app-character-infinite-list [characters]="characters"></app-character-infinite-list>
+    <ng-template #hasNoCharacterMatchView>
+      <div class="no-character-div">
+        <div class="col-md-12 d-flex justify-content-center">
+          <b class="no-character-text">Ooopps... No matched character for this pattern.</b>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <img src="assets/home-img-1.png" class="no-character-img" alt="Home image about Rick">
+        </div>
+      </div>
     </ng-template>
   </div>
 </div>

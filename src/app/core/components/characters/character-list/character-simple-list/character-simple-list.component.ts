@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Character} from '../../../../models/character.model';
 import {PageConfig} from './page-config';
 
@@ -7,7 +7,7 @@ import {PageConfig} from './page-config';
   templateUrl: './character-simple-list.component.html',
   styleUrls: ['./character-simple-list.component.scss']
 })
-export class CharacterSimpleListComponent implements OnInit {
+export class CharacterSimpleListComponent implements OnInit, OnChanges {
 
   @Input() characters: Character[];
 
@@ -19,9 +19,17 @@ export class CharacterSimpleListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initPage();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.initPage();
+  }
+
+  initPage(): void {
     this.pageConfig = new PageConfig();
     this.pageConfig.currentPageIndex = 0;
-    this.pageConfig.numberOfListedCharacter = 5;
+    this.pageConfig.numberOfListedCharacter = this.characters.length < 5 ? this.characters.length : 5;
     this.pageDatarefresh();
   }
 

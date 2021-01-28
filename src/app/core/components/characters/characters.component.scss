@@ -10,3 +10,50 @@
   color: $primary-color-light;
   opacity: 0.9;
 }
+
+.my-primary-button {
+  color: $primary-color-light;
+  border-color: $primary-color-light;
+
+  &:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  &:hover:active {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  &:disabled {
+    background-color: $primary-color-dark;
+    color: white;
+  }
+}
+
+.filter-input {
+  height: 40px;
+  width: 200px;
+}
+
+.list-select-button {
+  height: 40px;
+  width: 200px;
+}
+
+.no-character-div {
+  min-height: 500px;
+}
+
+.no-character-text {
+  font-size: 30px;
+  color: $primary-text-color;
+  opacity: 0.9;
+}
+
+.no-character-img {
+  margin-top: 40px;
+  width: 150px;
+  height: 200px;
+}
+
