@@ -6,9 +6,15 @@
   height: auto;
   width: auto;
 
+  min-height: 700px;
+
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.content-header {
+  padding: 30px;
 }
 
 .character-card-left-side {

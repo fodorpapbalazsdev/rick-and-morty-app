@@ -3,10 +3,11 @@
        matTooltip="Go back to characters page" matTooltipPosition="left" >
   </div>
   <div *ngIf="character; else waitingForCharacter" class="background-2 row">
+    <div class="col-md-12 d-flex justify-content-center content-header">
+      <b class="welcome-msg">Infos about {{character.name}}</b>
+    </div>
+
     <div class="col-md-6 character-card-left-side">
-      <div class="col-md-12 d-flex justify-content-center">
-        <b class="welcome-msg">Infos about <br>{{character.name}}</b>
-      </div>
       <div class="col-md-12 d-flex justify-content-center">
         <img class="character-img" src="{{character.image}}" alt="Image about {{character.name}}">
       </div>
