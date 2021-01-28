@@ -16,44 +16,39 @@ export class CharactersComponent implements OnInit {
   infiniteLoop = true;
   filterPatternChangedFlag = false;
   hasNoCharacterMatch = false;
+  nameFilterValue = '';
+  statusFilterValue = '';
 
   constructor(private characterService: CharacterService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
-    this.loadAllCharacters();
+    this.loadCharacters();
   }
 
-  unfilterButtonClicked(): void {
-    this.loadAllCharacters();
-  }
-
-  filterPatternChanged(target: any): void {
+  loadCharacters(): void {
     this.filterPatternChangedFlag = true;
-    this.characterService.getCharactersByName(target.value).then(res => {
+    this.characterService.getCharactersByNameAndStatus(this.nameFilterValue, this.statusFilterValue).then(res => {
       this.characters = res;
       this.hasNoCharacterMatch = this.characters.length === 0;
       this.filterPatternChangedFlag = false;
     }).catch(err => {
         this.dialog.open(WarningMessageDialogComponent, {
           data: {
-            why: 'character-filter-by-name-not-found'
+            why: 'no-character-found'
           }
         });
       }
     );
   }
 
-  private loadAllCharacters() {
-    this.characterService.getAllCharacters().then(res => {
-      this.characters = res;
-    }).catch(err => {
-        this.dialog.open(WarningMessageDialogComponent, {
-          data: {
-            why: 'character-loading'
-          }
-        });
-      }
-    );
+  filterPatternChanged(target: any): void {
+    this.nameFilterValue = target.value;
+    this.loadCharacters();
+  }
+
+  statusFilterChanged(target: any): void {
+    this.statusFilterValue = target.value === 'All' ? '' : target.value;
+    this.loadCharacters();
   }
 }

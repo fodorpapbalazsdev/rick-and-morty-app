@@ -23,6 +23,17 @@
              matTooltipShowDelay="1000" matTooltipHideDelay="1000"
              [matTooltipDisabled]="filterPatternChangedFlag">
     </div>
+
+    <div class="form-group ml-5">
+      <select class="form-control"
+              id="statusFilterSelector"
+              (change)="statusFilterChanged($event.target)">
+        <option>All</option>
+        <option>Alive</option>
+        <option>Dead</option>
+        <option>unknown</option>
+      </select>
+    </div>
   </div>
   <div class="col-md-12 d-flex justify-content-center">
     <div *ngIf="!hasNoCharacterMatch; else hasNoCharacterMatchView">

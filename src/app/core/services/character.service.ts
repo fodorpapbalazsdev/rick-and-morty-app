@@ -13,11 +13,11 @@ export class CharacterService {
   constructor(private http: HttpClient) {
   }
 
-  async getCharactersByName(name: string): Promise<Character[]> {
-    const url = this.REST_API_URL + '/character?name=' + name;
+  async getCharactersByNameAndStatus(name: string, status: string): Promise<Character[]> {
+    const url = this.REST_API_URL + '/character?name=' + name + '&status=' + status;
     return this.getCharactersIterative(url);
   }
-
+  
   async getAllCharacters(): Promise<Character[]> {
     return this.getCharactersIterative(this.REST_API_URL + '/character');
   }
@@ -44,5 +44,4 @@ export class CharacterService {
   async get(url: string): Promise<ApiResponse> {
     return await this.http.get<ApiResponse>(url).toPromise();
   }
-
 }
