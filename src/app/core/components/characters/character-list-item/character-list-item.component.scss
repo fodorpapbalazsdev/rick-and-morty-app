@@ -15,3 +15,13 @@
 .content-text-1 {
   color: #373636;
 }
+
+.dead-row {
+  &:hover {
+    background-color: rgb(152, 57, 71);
+    .content-text-1 {
+      color: white;
+    }
+  }
+  cursor: not-allowed;
+}
