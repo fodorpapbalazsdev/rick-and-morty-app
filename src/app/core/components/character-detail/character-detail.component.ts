@@ -13,11 +13,7 @@ export class CharacterDetailComponent implements OnInit {
   character: Character;
 
   constructor(private route: ActivatedRoute, private router: Router, private characterService: CharacterService) {
-    this.route.params.subscribe(params => {
-      this.characterService.getCharacterById(params.id).then((character: Character) => {
-        this.character = character;
-      });
-    });
+    this.character = this.route.snapshot.data.character;
   }
 
   ngOnInit(): void {

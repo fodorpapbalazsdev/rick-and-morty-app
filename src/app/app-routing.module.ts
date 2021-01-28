@@ -6,6 +6,7 @@ import {CharacterDetailComponent} from './core/components/character-detail/chara
 import {CharacterAliveGuardService} from './core/services/character-alive-guard.service';
 import {CharactersComponent} from './core/components/characters/characters.component';
 import {CharacterResolverService} from './core/components/characters/character-resolver.service';
+import {CharacterDetailResolverService} from './core/components/character-detail/character-detail-resolver.service';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -16,8 +17,15 @@ const routes: Routes = [
       characters: CharacterResolverService
     }
   },
+  {
+    path: 'characters/:id',
+    component: CharacterDetailComponent,
+    canActivate: [CharacterAliveGuardService],
+    resolve: {
+      character: CharacterDetailResolverService
+    }
+  },
   {path: 'about', component: AboutComponent},
-  {path: 'characters/:id', component: CharacterDetailComponent, canActivate: [CharacterAliveGuardService]},
   {path: '**', redirectTo: 'home'}
 ];
 
