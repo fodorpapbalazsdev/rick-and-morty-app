@@ -15,6 +15,7 @@ import {CharacterListItemComponent} from './core/components/characters/character
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {CharacterDetailComponent} from './core/components/character-detail/character-detail.component';
+import { CharacterStatusDirectiveDirective } from './core/components/directives/character-status-directive.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {CharacterDetailComponent} from './core/components/character-detail/chara
     CharacterSimpleListComponent,
     CharacterInfiniteListComponent,
     CharacterListItemComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    CharacterStatusDirectiveDirective
   ],
   imports: [
     BrowserModule,

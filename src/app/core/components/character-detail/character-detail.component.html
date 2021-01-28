@@ -14,10 +14,8 @@
     <div class="col-md-6 character-card-right-side">
       <b class="d-flex justify-content-center content-text-1">Name: {{character.name}}</b>
       <div class="status-icon-img" matTooltip="{{character.status}}" matTooltipPosition="after"
-           [ngClass]="{'alive-status': character.status.toLowerCase() === 'alive',
-                         'dead-status': character.status.toLowerCase() === 'dead',
-                         'unknown-status': character.status.toLowerCase() != 'alive' && character.status.toLowerCase() != 'dead'}"
-      ></div>
+           [appCharacterStatusDirective]="character.status">
+      </div>
       <p class="content-text-1 mt-4 d-flex justify-content-center">Last location: {{character.location.name }}</p>
       <p class="content-text-1 mt-4 d-flex justify-content-center">Created
         at: {{character.created | date:'YYYY-MM-dd'}}</p>

@@ -48,36 +48,6 @@
   margin: 10px auto 10px auto;
 }
 
-.alive-status {
-  background-image: url("~src/assets/character-status-icons/alive-status-icon.png");
-  width: 50px;
-  height: 50px;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.dead-status {
-  background-image: url("~src/assets/character-status-icons/dead-status-icon.png");
-  width: 50px;
-  height: 50px;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.unknown-status {
-  background-image: url("~src/assets/character-status-icons/unknown-status-icon.png");
-  width: 50px;
-  height: 50px;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .waiting-msg-container {
   margin-top: 30px;
   padding: 40px;

@@ -6,11 +6,10 @@
     <p class="content-text-1">{{character.name}}</p>
   </div>
   <div class="col-md-4 d-flex justify-content-center">
-    <div class="content-text-1" matTooltip="{{character.status}}" matTooltipPosition="after"
-         [ngClass]="{'alive-status': character.status.toLowerCase() === 'alive',
-                         'dead-status': character.status.toLowerCase() === 'dead',
-                         'unknown-status': character.status.toLowerCase() != 'alive' && character.status.toLowerCase() != 'dead'}"
-    ></div>
+    <div class="content-text-1"
+         matTooltip="{{character.status}}" matTooltipPosition="after"
+         [appCharacterStatusDirective]="character.status">
+    </div>
   </div>
   <div class="col-md-4 d-flex justify-content-end">
     <p class="content-text-1">{{character.created | date:'YYYY-MM-dd'}}</p>
