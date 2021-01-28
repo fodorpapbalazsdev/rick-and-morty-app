@@ -16,7 +16,6 @@ export class CharacterDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.characterService.getCharacterById(params.id).then((character: Character) => {
         this.character = character;
-        console.log(character);
       });
     });
   }

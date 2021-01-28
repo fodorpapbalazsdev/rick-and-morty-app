@@ -13,17 +13,17 @@ export class CharacterListItemComponent implements OnInit {
 
   @Input() character: Character;
 
-  constructor(private router: Router, private route: ActivatedRoute, private dialog: MatDialog) { }
+  constructor(private router: Router, private route: ActivatedRoute, private dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
   }
 
   characterClicked(characterId: number): void {
     if (this.character.status.toLowerCase() !== 'alive') {
-      console.log('Clicked');
       this.openDialog();
     } else {
-      this.router.navigate([characterId],  { relativeTo: this.route });
+      this.router.navigate([characterId], {relativeTo: this.route});
     }
   }
 
