@@ -134,4 +134,10 @@ export class CharactersComponent implements OnInit {
       this.elementToAnimates[2].elementLoaded = true;
     }, 400);
   }
+
+  resetFilters(): void {
+    this.nameFilterValue = '';
+    this.statusFilterValue = '';
+    this.loadCharacters();
+  }
 }

@@ -27,8 +27,8 @@
              [matTooltipDisabled]="filterPatternChangedFlag">
     </div>
 
-    <div class="form-group ml-5">
-      <select class="form-control"
+    <div class="form-group">
+      <select class="form-control status-selector"
               id="statusFilterSelector"
               (change)="statusFilterChanged($event.target)">
         <option>All</option>
@@ -37,6 +37,11 @@
         <option>unknown</option>
       </select>
     </div>
+    <button class="btn btn-outline-primary my-primary-button reset-button" (click)="resetFilters()"
+            matTooltip="Click to reset your filters" matTooltipPosition="above"
+            matTooltipShowDelay="1000">
+      Reset
+    </button>
   </div>
   <div class="col-md-12 d-flex justify-content-center"
        [@elementAppearAnimation]="this.getAppearAnimation(2)">
