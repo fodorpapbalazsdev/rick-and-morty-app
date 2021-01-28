@@ -1,16 +1,19 @@
 <div class="row content d-flex justify-content-center">
-  <div class="col-md-12 header-row p-4">
+  <div class="col-md-12 header-row p-4"
+       [@translateYNegativeAnimation]="this.pageLoaded ? 'notTranslated' : 'translated'"
+       [@elementAppearAnimation]="this.getAppearAnimation(0)">
     <b class="welcome-msg d-flex justify-content-center">Here are some Rick&Morty characters!</b>
   </div>
-  <div class="col-md-12 d-flex justify-content-center custom-control custom-switch mb-3">
-    <button class="btn btn-outline-primary my-primary-button list-select-button" (click)="infiniteLoop = !infiniteLoop"
-            [disabled]="!infiniteLoop"
+  <div class="col-md-12 d-flex justify-content-center custom-control custom-switch mb-3"
+       [@elementAppearAnimation]="this.getAppearAnimation(1)">
+    <button class="btn btn-outline-primary my-primary-button list-select-button" (click)="switchListType()"
+            [disabled]="!infiniteLoopButtonDisabled"
             matTooltip="Click to change to Simple List" matTooltipPosition="above"
             matTooltipShowDelay="1000">
       Simple List
     </button>
-    <button class="btn btn-outline-primary my-primary-button list-select-button" (click)="infiniteLoop = !infiniteLoop"
-            [disabled]="infiniteLoop"
+    <button class="btn btn-outline-primary my-primary-button list-select-button" (click)="switchListType()"
+            [disabled]="infiniteLoopButtonDisabled"
             matTooltip="Click to change to Infinite List" matTooltipPosition="above"
             matTooltipShowDelay="1000">
       Infinite List
@@ -35,7 +38,8 @@
       </select>
     </div>
   </div>
-  <div class="col-md-12 d-flex justify-content-center">
+  <div class="col-md-12 d-flex justify-content-center"
+       [@elementAppearAnimation]="this.getAppearAnimation(2)">
     <div class="character-list-container" *ngIf="!hasNoCharacterMatch; else hasNoCharacterMatchView">
       <div *ngIf="!infiniteLoop; else infiniteLoopView">
         <app-character-simple-list [characters]="characters"></app-character-simple-list>
