@@ -36,7 +36,7 @@
     </div>
   </div>
   <div class="col-md-12 d-flex justify-content-center">
-    <div *ngIf="!hasNoCharacterMatch; else hasNoCharacterMatchView">
+    <div class="character-list-container" *ngIf="!hasNoCharacterMatch; else hasNoCharacterMatchView">
       <div *ngIf="!infiniteLoop; else infiniteLoopView">
         <app-character-simple-list [characters]="characters"></app-character-simple-list>
       </div>

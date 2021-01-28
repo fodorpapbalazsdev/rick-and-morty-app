@@ -2,11 +2,7 @@
 
 .content {
   margin: 10px 10px 20px 10px;
-  border-style: solid;
-  border-color: rgb(127, 177, 214, .4);
-  border-radius: 20px;
   padding: 20px 10px 20px 10px;
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, .2);
 }
 
 .content-text-1 {
@@ -19,7 +15,7 @@
 }
 
 .form-group-div {
-  width: 60px;
+  width: auto;
 }
 
 .my-primary-button {
@@ -43,4 +39,8 @@
 
 .page-index-selector {
   height: 40px;
+}
+
+.num-list-characters-form-group {
+  width: auto;
 }

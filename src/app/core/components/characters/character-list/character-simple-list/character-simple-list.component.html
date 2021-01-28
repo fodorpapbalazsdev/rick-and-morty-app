@@ -1,32 +1,30 @@
 <div class="row content">
   <div class="col-md-12">
-    <div class="col-md-12 d-flex justify-content-center">
+    <div class="col-md-12 d-flex justify-content-between">
+      <p>Number of listed items {{this.pageConfig.numberOfListedCharacter}} of {{this.characters.length}}</p>
+      <p>Page {{this.pageConfig.currentPageIndex + 1}} of {{this.pageConfig.numberOfPages}}</p>
+    </div>
+    <div class="col-md-12 d-flex justify-content-between">
+      <div *ngIf="pageConfig.pageNumbers.length > 1" class="d-flex justify-content-center">
+        <button class="btn btn-outline-primary my-primary-button page-index-button" (click)="prevPage()"
+                [disabled]="pageConfig.currentPageIndex == 0">
+          Prev page
+        </button>
+        <div class="form-group form-group-div">
+          <select [selectedIndex]="pageConfig.currentPageIndex" class="form-control page-index-selector"
+                  id="currentPageIndex"
+                  (change)="pageIndexChanged($event.target)">
+            <option *ngFor="let i of pageConfig.pageNumbers">{{i + 1}}</option>
+          </select>
+        </div>
+        <button class="btn btn-outline-primary my-primary-button page-index-button" (click)="nextPage()"
+                [disabled]="pageConfig.currentPageIndex == pageConfig.numberOfPages - 1">Next page
+        </button>
+      </div>
       <div class="form-group">
-        <input type="number" class="form-control" id="exampleSelect1" [value]="pageConfig.numberOfListedCharacter"
+        <input type="number" class="form-control num-list-characters-form-group" id="exampleSelect1" [value]="pageConfig.numberOfListedCharacter"
                (change)="numberOdListedCharacterChanged($event.target)" [min]="1" [max]="characters.length">
       </div>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
-      <p>Number of listed items {{this.pageConfig.numberOfListedCharacter}} of {{this.characters.length}}</p>
-    </div>
-    <div *ngIf="pageConfig.pageNumbers.length > 1" class="col-md-12 d-flex justify-content-center">
-      <button class="btn btn-outline-primary my-primary-button page-index-button" (click)="prevPage()"
-              [disabled]="pageConfig.currentPageIndex == 0">
-        Prev page
-      </button>
-      <div class="form-group form-group-div">
-        <select [selectedIndex]="pageConfig.currentPageIndex" class="form-control page-index-selector"
-                id="currentPageIndex"
-                (change)="pageIndexChanged($event.target)">
-          <option *ngFor="let i of pageConfig.pageNumbers">{{i + 1}}</option>
-        </select>
-      </div>
-      <button class="btn btn-outline-primary my-primary-button page-index-button" (click)="nextPage()"
-              [disabled]="pageConfig.currentPageIndex == pageConfig.numberOfPages - 1">Next page
-      </button>
-    </div>
-    <div class="col-md-12 d-flex justify-content-center">
-      <p>Page {{this.pageConfig.currentPageIndex + 1}} of {{this.pageConfig.numberOfPages}}</p>
     </div>
     <div class="row d-flex justify-content-center">
       <div class="col-md-4 d-flex justify-content-start">

@@ -14,7 +14,7 @@ export class CharactersComponent implements OnInit {
 
   characters: Character[];
 
-  infiniteLoop = true;
+  infiniteLoop = false;
   filterPatternChangedFlag = false;
   hasNoCharacterMatch = false;
   nameFilterValue = '';
