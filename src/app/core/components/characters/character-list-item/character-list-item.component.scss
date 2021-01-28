@@ -1,27 +1,37 @@
+@import "src/style_variables";
+
 .character-row {
   margin: 5px 0px 5px 0px;
   padding: 10px 20px 10px 20px;
   min-width: 750px;
   border-radius: 5px;
 
-  box-shadow: 0 4px 4px -2px rgba(0,0,0,.2);
-  &:hover {
-    color: white;
-    background-color: rgb(127, 177, 214, .4);
+  .content-text-1 {
+    color: #373636;
   }
-  cursor:pointer;
-}
 
-.content-text-1 {
-  color: #373636;
-}
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, .2);
 
-.dead-row {
   &:hover {
-    background-color: rgb(152, 57, 71);
+    background-color: $primary-color-light;
+
     .content-text-1 {
       color: white;
     }
   }
+
+  cursor: pointer;
+}
+
+
+.dead-row {
+  &:hover {
+    background-color: rgb(152, 57, 71);
+
+    .content-text-1 {
+      color: white;
+    }
+  }
+
   cursor: not-allowed;
 }

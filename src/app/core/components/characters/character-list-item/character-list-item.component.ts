@@ -12,6 +12,7 @@ import {MatDialog} from '@angular/material/dialog';
 export class CharacterListItemComponent implements OnInit {
 
   @Input() character: Character;
+  statusStyle = 'default';
 
   constructor(private router: Router, private route: ActivatedRoute, private dialog: MatDialog) {
   }
@@ -35,4 +36,11 @@ export class CharacterListItemComponent implements OnInit {
     });
   }
 
+  mouseOver(): void {
+    this.statusStyle = 'mouse-over';
+  }
+
+  mouseLeave(): void {
+    this.statusStyle = 'default';
+  }
 }

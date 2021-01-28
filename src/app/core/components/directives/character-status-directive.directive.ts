@@ -1,19 +1,25 @@
-import {Directive, ElementRef, Input, OnInit} from '@angular/core';
+import {Directive, ElementRef, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 @Directive({
   selector: '[appCharacterStatusDirective]'
 })
-export class CharacterStatusDirectiveDirective implements OnInit {
+export class CharacterStatusDirectiveDirective implements OnInit, OnChanges {
 
   private element: ElementRef;
 
   @Input('appCharacterStatusDirective') status: string;
+  @Input('appCharacterStatusStyle') style: string;
+
 
   constructor(el: ElementRef) {
     this.element = el;
   }
 
   ngOnInit(): void {
+    this.render();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
     this.render();
   }
 
@@ -26,13 +32,23 @@ export class CharacterStatusDirectiveDirective implements OnInit {
 
     switch (this.status.toLowerCase()) {
       case 'alive':
-        this.element.nativeElement.style.backgroundImage = 'url(/assets/character-status-icons/alive-status-icon.png)';
+        if (this.style === 'mouse-over') {
+          this.element.nativeElement.style.backgroundImage = 'url(/assets/character-status-icons/alive-status-icon-white.png)';
+        } else {
+          this.element.nativeElement.style.backgroundImage = 'url(/assets/character-status-icons/alive-status-icon.png)';
+        }
         break;
       case 'dead':
         this.element.nativeElement.style.backgroundImage = 'url(/assets/character-status-icons/dead-status-icon.png)';
         break;
       default:
-        this.element.nativeElement.style.backgroundImage = 'url(/assets/character-status-icons/unknown-status-icon.png)';
+        if (this.style === 'mouse-over') {
+          this.element.nativeElement.style.backgroundImage = 'url(/assets/character-status-icons/unknown-status-icon-white.png)';
+        } else {
+          this.element.nativeElement.style.backgroundImage = 'url(/assets/character-status-icons/unknown-status-icon.png)';
+        }
     }
   }
+
+
 }
