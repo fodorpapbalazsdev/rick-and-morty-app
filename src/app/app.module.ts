@@ -15,7 +15,9 @@ import {CharacterListItemComponent} from './core/components/characters/character
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {CharacterDetailComponent} from './core/components/character-detail/character-detail.component';
-import { CharacterStatusDirectiveDirective } from './core/components/directives/character-status-directive.directive';
+import {CharacterStatusDirectiveDirective} from './core/components/directives/character-status-directive.directive';
+import {NotAliveCharacterDialogComponent} from './core/components/dialogs/not-alive-character-dialog/not-alive-character-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -29,14 +31,16 @@ import { CharacterStatusDirectiveDirective } from './core/components/directives/
     CharacterInfiniteListComponent,
     CharacterListItemComponent,
     CharacterDetailComponent,
-    CharacterStatusDirectiveDirective
+    CharacterStatusDirectiveDirective,
+    NotAliveCharacterDialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

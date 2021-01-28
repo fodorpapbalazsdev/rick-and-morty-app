@@ -1,0 +1,11 @@
+<div class="content">
+  <div *ngIf="data.from === 'character-list-item'" class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+      <b class="content-text-1">Sorry.. We can't open dead characters.</b>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center">
+      <div [appCharacterStatusDirective]="'dead'" class="mt-4"></div>
+    </div>
+  </div>
+  <b *ngIf="data.from === 'character-alive-guard'" class="content-text-1">Url based character loading not allowed!</b>
+</div>
