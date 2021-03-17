@@ -19,6 +19,8 @@ import {CharacterStatusDirectiveDirective} from './core/components/directives/ch
 import {NotAliveCharacterDialogComponent} from './core/components/dialogs/not-alive-character-dialog/not-alive-character-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { WarningMessageDialogComponent } from './core/components/dialogs/warning-message-dialog/warning-message-dialog.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { WarningMessageDialogComponent } from './core/components/dialogs/warning
     AppRoutingModule,
     HttpClientModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
